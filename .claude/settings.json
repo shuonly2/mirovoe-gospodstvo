@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -Command \"$env:PATH += ';C:\\Program Files\\Git\\bin'; Set-Location 'c:\\Users\\Admin\\Мировое господство'; git add .; $changes = git status --porcelain; if ($changes) { git commit -m 'Автосохранение'; git push origin main }\""
+          }
+        ]
+      }
+    ]
+  }
+}
